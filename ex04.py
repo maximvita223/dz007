@@ -6,7 +6,7 @@ class Car:
         self.name = name
         self.is_police = is_police
 
-    def go(self):
+    def start_up(self):
         return f'{self.name} is started'
 
     def stop(self):
@@ -23,8 +23,6 @@ class Car:
 
 
 class TownCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name, is_police)
 
     def show_speed(self):
         print(f'Current speed of town car {self.name} is {self.speed}')
@@ -35,13 +33,11 @@ class TownCar(Car):
             return f'Speed of {self.name} is normal for town car'
 
 class SportCar(Car):
-    def __init__(self, speed, color, name, is_police):
+    def _init_(self, speed, color, name, is_police):
         super().__init__(speed, color, name, is_police)
 
 
 class WorkCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name, is_police)
 
     def show_speed(self):
         print(f'Current speed of work car {self.name} is {self.speed}')
@@ -51,8 +47,6 @@ class WorkCar(Car):
 
 
 class PoliceCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name, is_police)
 
     def police(self):
         if self.is_police:
@@ -67,7 +61,7 @@ volkswagen = WorkCar(70, 'Rose', 'Volksvagen', False)
 matiz = PoliceCar(240, 'Blue',  'Matiz', True)
 print(volkswagen.turn_left())
 print(f'{toyota.turn_right()},{masserati.stop()}')
-print(f'{volkswagen.go()} {volkswagen.show_speed()}')
+print(f'{volkswagen.start_up()} {volkswagen.show_speed()}')
 print(f'{volkswagen.name} {volkswagen.color}')
 print(f'{masserati.name} {masserati.is_police}')
 print(f'{volkswagen.name} {volkswagen.is_police}')
