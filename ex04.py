@@ -32,6 +32,7 @@ class TownCar(Car):
         else:
             return f'Speed of {self.name} is normal for town car'
 
+
 class SportCar(Car):
     def _init_(self, speed, color, name, is_police):
         super().__init__(speed, color, name, is_police)

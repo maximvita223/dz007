@@ -8,7 +8,8 @@ class TrafficLight:
     __color = None
     __c_index = 0
     change = 3
-    def __init__(self, init_color = 'Red', change = 3):
+
+    def __init__(self, init_color='Red', change=3):
         self.__color = init_color if self.COLOR_TIME.get(
             init_color) else list(self.COLOR_TIME.keys())[self.__c_index]
         self.__c_index = list(self.COLOR_TIME.keys()).index(self.__color)
